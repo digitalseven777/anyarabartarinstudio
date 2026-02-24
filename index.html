@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anyara Bartarin — Nail Designer & Formadora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Italiana&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0b0a;
+  --ink2:#181614;
+  --cream:#f7f2ed;
+  --warm:#ede6de;
+  --rose:#b8785e;
+  --rose-light:#c8907a;
+  --gold:#c9a96e;
+  --muted:#8a7f76;
+  --muted2:#b5aa9f;
+  --border:rgba(184,120,94,0.18);
+  --border2:rgba(184,120,94,0.08);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+*,a{cursor:none}
+.cursor{position:fixed;width:8px;height:8px;background:var(--rose);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid var(--rose);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s;opacity:.55}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,242,237,0.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);animation:navIn .8s ease both}
+@keyframes navIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+.nav-logo{font-family:'Italiana',serif;font-size:1.2rem;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--rose)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--rose);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--rose)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:10px 24px;background:var(--ink);color:white;text-decoration:none;transition:background .3s}
+.nav-cta:hover{background:var(--rose)}
+.nav-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.nav-menu-btn span{width:22px;height:1px;background:var(--ink);display:block}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:52% 48%;padding-top:72px}
+.hero-left{padding:90px 70px 80px 80px;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:30px;animation:fadeUp .9s .2s both}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--rose)}
+.hero-eyebrow-text{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6.5vw,5.8rem);font-weight:300;line-height:.95;margin-bottom:10px;animation:fadeUp .9s .35s both}
+.hero-title em{font-style:italic;color:var(--rose);display:block}
+.hero-name{font-family:'Italiana',serif;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--muted);font-weight:400;margin-bottom:32px;letter-spacing:.03em;animation:fadeUp .9s .45s both}
+.hero-desc{font-size:.9rem;line-height:1.88;color:var(--muted);max-width:400px;margin-bottom:46px;font-weight:300;animation:fadeUp .9s .55s both}
+.hero-stats{display:flex;gap:0;margin-bottom:46px;animation:fadeUp .9s .65s both}
+.hero-stat{padding:18px 30px 18px 0;margin-right:30px;border-right:1px solid var(--border)}
+.hero-stat:last-child{border-right:none;margin-right:0}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:500;color:var(--ink);line-height:1}
+.stat-n sup{font-size:1.1rem;color:var(--rose)}
+.stat-label{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:4px;line-height:1.5}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .9s .75s both}
+.btn-dark{background:var(--ink);color:white;padding:16px 36px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;display:inline-block}
+.btn-dark:hover{background:var(--rose);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(12,11,10,.22);color:var(--ink);padding:16px 28px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+
+.hero-right{position:relative;background:var(--warm);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-img-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 35% 25%,rgba(184,120,94,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(201,169,110,.07) 0%,transparent 55%)}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent 0,transparent 42px,rgba(184,120,94,.03) 42px,rgba(184,120,94,.03) 43px)}
+.profile-circle{width:300px;height:300px;border-radius:50%;border:1px solid rgba(184,120,94,.28);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;animation:fadeUp 1s .6s both}
+.profile-circle::before{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(184,120,94,.18);animation:rotateSlow 22s linear infinite}
+@keyframes rotateSlow{to{transform:rotate(360deg)}}
+.profile-circle-inner{width:240px;height:240px;border-radius:50%;background:linear-gradient(135deg,rgba(184,120,94,.14),rgba(201,169,110,.08));display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,120,94,.18);overflow:hidden;position:relative}
+.profile-photo{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;display:block}
+.profile-initials{font-family:'Italiana',serif;font-size:3rem;color:var(--rose);opacity:.6;position:absolute}
+.hero-badge{position:absolute;bottom:44px;left:44px;background:white;padding:18px 22px;animation:fadeUp .9s .9s both;box-shadow:0 12px 40px rgba(12,11,10,.08);z-index:3}
+.hero-badge-label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:4px}
+.hero-badge-value{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink)}
+.hero-badge-value span{color:var(--rose);font-style:italic}
+.hero-badge2{position:absolute;top:96px;right:36px;background:var(--ink);padding:16px 20px;animation:fadeUp .9s 1s both;z-index:3}
+.hero-badge2-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px}
+.hero-badge2-value{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white}
+
+/* TICKER */
+.ticker-bar{background:var(--rose);padding:10px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-block;animation:ticker 24s linear infinite}
+.ticker-item{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:white;margin:0 26px;opacity:.9}
+.ticker-sep{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35);vertical-align:middle;margin-right:26px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about-section{padding:120px 80px;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
+.sec-label{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-label-line{width:26px;height:1px;background:var(--rose)}
+.sec-label-text{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.15;margin-bottom:20px;color:var(--ink)}
+.sec-title em{font-style:italic;color:var(--rose)}
+.sec-body{font-size:.88rem;line-height:1.92;color:var(--muted);font-weight:300;margin-bottom:18px}
+.diff-list{display:flex;flex-direction:column}
+.diff-item{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
+.diff-item:first-child{border-top:1px solid var(--border)}
+.diff-item:hover{padding-left:8px}
+.diff-num{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--rose);opacity:.45;min-width:26px;padding-top:2px}
+.diff-title{font-size:.86rem;font-weight:500;color:var(--ink);margin-bottom:4px}
+.diff-text{font-size:.78rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* SERVICES */
+.services-section{background:var(--ink2);padding:120px 80px}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px}
+.services-header .sec-title{color:white;margin-bottom:0}
+.services-header .sec-label-line{background:var(--rose)}
+.services-header .sec-label-text{color:var(--rose)}
+.services-header-right{max-width:300px;font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.3);font-weight:300;text-align:right}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.05)}
+.service-card{padding:42px 34px;border-right:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;transition:background .4s;text-decoration:none;display:block}
+.service-card:nth-child(3n){border-right:none}
+.service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.service-card:hover{background:rgba(255,255,255,.02)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-n{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:rgba(255,255,255,.04);line-height:1;margin-bottom:22px;transition:color .3s}
+.service-card:hover .service-n{color:rgba(184,120,94,.1)}
+.service-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:white;margin-bottom:12px}
+.service-desc{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.78;font-weight:300;margin-bottom:22px}
+.service-tag{display:inline-block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,120,94,.22);padding:5px 11px;transition:all .3s}
+.service-card:hover .service-tag{background:rgba(184,120,94,.1);border-color:var(--rose)}
+
+/* COURSE */
+.course-section{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
+.course-left{background:var(--rose);padding:90px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.course-left::before{content:'FORM';position:absolute;font-family:'Italiana',serif;font-size:11rem;color:rgba(255,255,255,.06);bottom:-10px;right:-10px;line-height:1;pointer-events:none}
+.course-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.course-eyebrow-line{width:22px;height:1px;background:rgba(255,255,255,.5)}
+.course-eyebrow-text{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.course-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,4vw,3.4rem);font-weight:300;color:white;line-height:1.1;margin-bottom:22px;position:relative;z-index:1}
+.course-title em{font-style:italic;display:block;font-weight:400}
+.course-body{font-size:.86rem;color:rgba(255,255,255,.76);line-height:1.88;margin-bottom:38px;max-width:400px;position:relative;z-index:1;font-weight:300}
+.btn-white{display:inline-block;background:white;color:var(--rose);padding:16px 36px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .3s;align-self:flex-start;position:relative;z-index:1;font-weight:500}
+.btn-white:hover{background:var(--ink);color:white;transform:translateY(-1px)}
+.course-right{background:var(--cream);padding:90px 80px;display:flex;flex-direction:column;justify-content:center}
+.course-right .sec-title{margin-bottom:32px}
+.feature-list{display:flex;flex-direction:column}
+.feature-item{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.feature-item:first-child{border-top:1px solid var(--border)}
+.feature-marker{width:18px;height:18px;border:1px solid var(--rose);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.feature-marker-dot{width:5px;height:5px;background:var(--rose);border-radius:50%}
+.feature-title{font-size:.84rem;font-weight:500;color:var(--ink);margin-bottom:3px}
+.feature-text{font-size:.76rem;color:var(--muted);line-height:1.65;font-weight:300}
+.course-reach{margin-top:38px;padding:22px;background:var(--warm);border-left:2px solid var(--rose)}
+.reach-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+.reach-cities{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.75}
+
+/* PORTFOLIO */
+.portfolio-section{padding:120px 80px;background:var(--cream)}
+.portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.portfolio-link{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);text-decoration:none;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--border);padding-bottom:2px;transition:all .3s}
+.portfolio-link:hover{color:var(--ink);border-color:var(--ink)}
+.portfolio-link::after{content:'→';font-size:.85rem}
+.portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 240px;gap:10px}
+.p-item{background:var(--warm);position:relative;overflow:hidden}
+.p-item:nth-child(1){grid-column:1/6;grid-row:1}
+.p-item:nth-child(2){grid-column:6/9;grid-row:1}
+.p-item:nth-child(3){grid-column:9/13;grid-row:1}
+.p-item:nth-child(4){grid-column:1/4;grid-row:2}
+.p-item:nth-child(5){grid-column:4/9;grid-row:2}
+.p-item:nth-child(6){grid-column:9/13;grid-row:2}
+.p-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--warm),rgba(184,120,94,.09))}
+.p-inner::before{content:'';position:absolute;inset:0;background:var(--ink);opacity:0;transition:opacity .4s}
+.p-item:hover .p-inner::before{opacity:.55}
+.p-label{position:absolute;bottom:16px;left:16px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:white;opacity:0;transform:translateY(5px);transition:all .4s;z-index:2}
+.p-item:hover .p-label{opacity:1;transform:none}
+.p-placeholder{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);opacity:.35;text-align:center;padding:14px;position:relative;z-index:1;font-style:italic}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--ink2);padding:120px 80px}
+.testimonials-section .sec-label-line{background:var(--rose)}
+.testimonials-section .sec-label-text{color:var(--rose)}
+.testimonials-section .sec-title{color:white}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);margin-top:50px}
+.t-card{background:var(--ink2);padding:38px 34px;transition:background .3s;position:relative}
+.t-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent);transform:scaleX(0);transition:transform .5s}
+.t-card:hover{background:rgba(255,255,255,.018)}
+.t-card:hover::before{transform:scaleX(1)}
+.t-location{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.t-location::before{content:'';width:14px;height:1px;background:var(--rose)}
+.t-quote{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-style:italic;font-weight:300;color:rgba(255,255,255,.78);line-height:1.78;margin-bottom:22px}
+.t-author{font-size:.73rem;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.t-type{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+
+/* CREDENTIALS */
+.creds-section{background:var(--cream);padding:120px 80px;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
+.creds-boxes{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.cred-box{padding:34px 26px;min-height:175px;display:flex;flex-direction:column;justify-content:space-between}
+.cred-box.dark{background:var(--ink2)}
+.cred-box.warm-bg{background:var(--warm)}
+.cred-box.rose-bg{background:var(--rose)}
+.cred-box.white-bg{background:white;border:1px solid var(--border)}
+.cred-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1}
+.cred-box.dark .cred-num{color:white}
+.cred-box.warm-bg .cred-num,.cred-box.white-bg .cred-num{color:var(--ink)}
+.cred-box.rose-bg .cred-num{color:white}
+.cred-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.55}
+.cred-box.dark .cred-label{color:rgba(255,255,255,.3)}
+.cred-box.warm-bg .cred-label,.cred-box.white-bg .cred-label{color:var(--muted)}
+.cred-box.rose-bg .cred-label{color:rgba(255,255,255,.6)}
+.award-badge{margin-top:34px;padding:22px;background:var(--warm);border-left:2px solid var(--gold);display:flex;align-items:flex-start;gap:16px}
+.award-icon{width:40px;height:40px;background:var(--ink);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.award-svg{width:18px;height:18px;fill:var(--gold)}
+.award-label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.award-text{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink)}
+.creds-list{margin-top:30px;display:flex;flex-direction:column}
+.cred-item{display:flex;align-items:center;gap:13px;padding:13px 0;border-bottom:1px solid var(--border)}
+.cred-item:first-child{border-top:1px solid var(--border)}
+.cred-dot{width:5px;height:5px;border-radius:50%;background:var(--rose);flex-shrink:0}
+.cred-text{font-size:.82rem;color:var(--ink);font-weight:300}
+
+/* LOCATION */
+.location-section{background:var(--ink);padding:100px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.location-section .sec-label-line{background:var(--rose)}
+.location-section .sec-label-text{color:var(--rose)}
+.location-section .sec-title{color:white}
+.location-body{font-size:.88rem;line-height:1.88;color:rgba(255,255,255,.4);font-weight:300;margin-top:10px;margin-bottom:34px}
+.city-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8rem;color:rgba(255,255,255,.5);transition:color .25s}
+.city-item:first-child{border-top:1px solid rgba(255,255,255,.05)}
+.city-item:hover{color:white}
+.city-dot{width:4px;height:4px;border-radius:50%;background:var(--rose);flex-shrink:0}
+.city-main{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.city-note{font-size:.66rem;color:rgba(255,255,255,.22);margin-left:auto}
+.location-map{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;text-decoration:none;transition:border-color .3s,background .3s}
+.location-map:hover{border-color:rgba(184,120,94,.3);background:rgba(255,255,255,.05)}
+.location-map::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,120,94,.06),transparent 70%)}
+.location-map:hover::before{background:radial-gradient(ellipse at center,rgba(184,120,94,.12),transparent 70%)}
+.map-pin{width:46px;height:46px;border:1px solid rgba(184,120,94,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:border-color .3s,transform .3s}
+.location-map:hover .map-pin{border-color:var(--rose);transform:translateY(-4px)}
+.map-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);position:relative;z-index:1}
+.map-city{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(255,255,255,.55);font-style:italic;position:relative;z-index:1;transition:color .3s}
+.location-map:hover .map-city{color:rgba(255,255,255,.85)}
+.map-address{font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.06em;position:relative;z-index:1;text-align:center;line-height:1.6;transition:color .3s;padding:0 24px}
+.location-map:hover .map-address{color:rgba(255,255,255,.45)}
+.map-cta{position:relative;z-index:1;display:flex;align-items:center;gap:8px;margin-top:8px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,120,94,.25);padding:9px 18px;transition:all .3s}
+.location-map:hover .map-cta{background:rgba(184,120,94,.12);border-color:var(--rose)}
+
+/* CTA */
+.cta-section{background:var(--rose);padding:100px 80px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.cta-section::before{content:'AB';position:absolute;font-family:'Italiana',serif;font-size:30rem;color:rgba(255,255,255,.04);right:-60px;bottom:-80px;line-height:1;pointer-events:none}
+.cta-label{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.cta-label::before{content:'';width:18px;height:1px;background:rgba(255,255,255,.35)}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;color:white;line-height:1.05;position:relative;z-index:1}
+.cta-title em{font-style:italic;display:block}
+.cta-desc{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.85;margin-bottom:22px;font-weight:300}
+.cta-buttons{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
+.btn-cta-white{display:inline-block;background:white;color:var(--rose);padding:17px 40px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .3s;font-weight:500}
+.btn-cta-white:hover{background:var(--ink);color:white;transform:translateY(-1px)}
+.btn-cta-ghost{display:inline-block;border:1px solid rgba(255,255,255,.36);color:white;padding:17px 40px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.1);border-color:white}
+
+/* FOOTER */
+footer{background:var(--ink);padding:46px 80px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05)}
+.footer-logo{font-family:'Italiana',serif;font-size:1.15rem;color:white;text-decoration:none}
+.footer-logo span{color:var(--rose)}
+.footer-social{display:flex;gap:24px}
+.footer-social a{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s}
+.footer-social a:hover{color:var(--rose)}
+.footer-copy{font-size:.62rem;color:rgba(255,255,255,.18);letter-spacing:.05em}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  nav{padding:0 32px}
+  .nav-links{display:none}
+  .nav-menu-btn{display:flex}
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:60px 32px 50px}
+  .hero-right{min-height:380px}
+  .about-section,.creds-section,.location-section,.cta-section{grid-template-columns:1fr;gap:48px}
+  .about-section,.creds-section,.portfolio-section,.testimonials-section,.services-section{padding:80px 32px}
+  .location-section{padding:80px 32px}
+  .cta-section{padding:80px 32px}
+  .course-section{grid-template-columns:1fr}
+  .course-left,.course-right{padding:70px 32px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .services-header{flex-direction:column;gap:18px;align-items:flex-start}
+  .services-header-right{text-align:left;max-width:100%}
+  .t-grid{grid-template-columns:1fr 1fr}
+  .portfolio-header{flex-direction:column;gap:14px;align-items:flex-start}
+  .portfolio-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .p-item{grid-column:unset!important;grid-row:unset!important;height:200px}
+  footer{flex-direction:column;gap:18px;text-align:center;padding:40px 32px}
+  .cta-buttons{flex-direction:row;flex-wrap:wrap}
+}
+@media(max-width:640px){
+  .hero-title{font-size:3rem}
+  .services-grid,.t-grid{grid-template-columns:1fr}
+  .creds-boxes{grid-template-columns:1fr 1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .p-item{height:220px}
+  .cta-buttons{flex-direction:column}
+  .hero-stats{flex-wrap:wrap;gap:16px}
+  .hero-stat{margin-right:0;border-right:none;padding-right:0;border-bottom:1px solid var(--border);padding-bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">Anyara <span>Bartarin</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#curso">Formação</a></li>
+    <li><a href="#portfolio">Trabalhos</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5519993823807" class="nav-cta">Agendar Horário</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Nail Designer · Conchal, SP</span>
+    </div>
+    <h1 class="hero-title">Arte que<br><em>transforma</em></h1>
+    <p class="hero-name">Anyara Bartarin</p>
+    <p class="hero-desc">Especialista em nail design e formação profissional. Com 4 anos de experiência, mais de 40 certificados e alunas formadas em todo o estado, o atendimento que você merece começa aqui.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-n">4<sup>+</sup></div>
+        <div class="stat-label">Anos de<br>Experiência</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">40<sup>+</sup></div>
+        <div class="stat-label">Certificados<br>Profissionais</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">6</div>
+        <div class="stat-label">Cidades com<br>Alunas Ativas</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#curso" class="btn-dark">Quero me Formar</a>
+      <a href="https://wa.me/5519993823807" class="btn-outline">Agendar Serviço</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="profile-circle">
+      <div class="profile-circle-inner">
+        <img
+          src="assets/img/avatar.png"
+          alt="Anyara Bartarin"
+          class="profile-photo"
+          onerror="this.style.display='none';this.nextElementSibling.style.opacity='0.6'"
+        >
+        <span class="profile-initials" style="opacity:0">AB</span>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-label">Premiação</div>
+      <div class="hero-badge-value">Prêmio <span>Real Premium</span></div>
+    </div>
+    <div class="hero-badge2">
+      <div class="hero-badge2-label">Excelência Empresarial</div>
+      <div class="hero-badge2-value">Nail Designer SP</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span class="ticker-item">Americana SP</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Cosmópolis</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Engenheiro Coelho</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Martinho Prado</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Vila</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Conchal</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Americana SP</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Cosmópolis</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Engenheiro Coelho</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Martinho Prado</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Vila</span><span class="ticker-sep"></span>
+    <span class="ticker-item">Conchal</span><span class="ticker-sep"></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="reveal">
+    <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Sobre</span></div>
+    <h2 class="sec-title">Uma artista<br>com <em>propósito</em></h2>
+    <p class="sec-body">Anyara Bartarin construiu sua carreira com dedicação, técnica apurada e amor genuíno pela arte das unhas. Mais do que embelezar, ela transforma a autoestima de clientes e ainda forma uma nova geração de profissionais capacitadas para o mercado.</p>
+    <p class="sec-body">Com presença consolidada em múltiplas cidades do interior paulista, é referência regional em nail design — tanto pelo nível técnico dos seus trabalhos quanto pela qualidade da formação que oferece.</p>
+  </div>
+  <div class="diff-list reveal d2">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div>
+        <div class="diff-title">Técnica de nível avançado</div>
+        <div class="diff-text">Domínio em gel, acrigel, fibra de vidro, nail art e técnicas exclusivas, com atualização constante através de cursos e certificações nacionais.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div>
+        <div class="diff-title">Formadora certificada</div>
+        <div class="diff-text">Mais de 40 certificados e metodologia própria de ensino, formando profissionais do zero até a atuação no mercado com confiança.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div>
+        <div class="diff-title">Atendimento personalizado</div>
+        <div class="diff-text">Cada cliente é única. O atendimento inclui consulta de design, cuidados e orientações completas para manutenção das suas unhas.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div>
+        <div class="diff-title">Reconhecimento de mercado</div>
+        <div class="diff-text">Premiada pelo Real Premium como referência em excelência empresarial na área de nail design no interior de São Paulo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="servicos">
+  <div class="services-header reveal">
+    <div>
+      <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Serviços</span></div>
+      <h2 class="sec-title">O que posso<br>fazer por você</h2>
+    </div>
+    <div class="services-header-right">Cada serviço é executado com materiais premium, técnica refinada e atenção absoluta a cada detalhe. Agende e veja a diferença.</div>
+  </div>
+  <div class="services-grid">
+    <a href="https://wa.me/5519993823807" class="service-card reveal">
+      <div class="service-n">01</div>
+      <div class="service-name">Alongamento em Gel</div>
+      <div class="service-desc">Técnica completa com gel premium, construção durável e acabamento impecável. Ideal para comprimento e resistência no dia a dia.</div>
+      <span class="service-tag">Agendar</span>
+    </a>
+    <a href="https://wa.me/5519993823807" class="service-card reveal d1">
+      <div class="service-n">02</div>
+      <div class="service-name">Acrigel & Fibra de Vidro</div>
+      <div class="service-desc">Combinação de técnicas para unhas com máxima resistência e naturaldade. Perfeito para o cotidiano intenso e quem exige durabilidade.</div>
+      <span class="service-tag">Agendar</span>
+    </a>
+    <a href="https://wa.me/5519993823807" class="service-card reveal d2">
+      <div class="service-n">03</div>
+      <div class="service-name">Nail Art & Design</div>
+      <div class="service-desc">Arte personalizada do minimalismo refinado até trabalhos detalhados e exclusivos. Cada detalhe reflete sua personalidade única.</div>
+      <span class="service-tag">Agendar</span>
+    </a>
+    <a href="https://wa.me/5519993823807" class="service-card reveal">
+      <div class="service-n">04</div>
+      <div class="service-name">Manicure Clássica</div>
+      <div class="service-desc">Cuidado completo das cutículas, modelagem e esmaltação com produtos selecionados para resultado elegante e duradouro.</div>
+      <span class="service-tag">Agendar</span>
+    </a>
+    <a href="https://wa.me/5519993823807" class="service-card reveal d1">
+      <div class="service-n">05</div>
+      <div class="service-name">Manutenção & Rebalanceamento</div>
+      <div class="service-desc">Reequilíbrio e manutenção do alongamento para preservar a integridade e beleza das suas unhas por muito mais tempo.</div>
+      <span class="service-tag">Agendar</span>
+    </a>
+    <a href="#curso" class="service-card reveal d2">
+      <div class="service-n">06</div>
+      <div class="service-name">Formação Profissional</div>
+      <div class="service-desc">Aprenda com quem domina a arte. Cursos modulares do zero ao avançado, com certificação reconhecida e suporte contínuo.</div>
+      <span class="service-tag">Saber mais</span>
+    </a>
+  </div>
+</section>
+
+<!-- COURSE -->
+<section class="course-section" id="curso">
+  <div class="course-left">
+    <div class="course-eyebrow">
+      <div class="course-eyebrow-line"></div>
+      <span class="course-eyebrow-text">Formação Profissional</span>
+    </div>
+    <h2 class="course-title">Torne-se uma<br><em>Nail Designer</em><br>de referência</h2>
+    <p class="course-body">Você não precisa de experiência prévia para começar. A formação foi desenvolvida para levar alunas do iniciante ao mercado de trabalho com segurança, técnica e confiança total — profissionais que já estão atuando em diversas cidades.</p>
+    <a href="https://wa.me/5519993823807?text=Ol%C3%A1%20Anyara!%20Tenho%20interesse%20no%20curso%20de%20Nail%20Designer" class="btn-white">Quero me inscrever</a>
+  </div>
+  <div class="course-right">
+    <div class="sec-label reveal"><div class="sec-label-line"></div><span class="sec-label-text">Conteúdo do curso</span></div>
+    <h3 class="sec-title reveal">Formação completa,<br>do zero ao <em>avançado</em></h3>
+    <div class="feature-list">
+      <div class="feature-item reveal">
+        <div class="feature-marker"><div class="feature-marker-dot"></div></div>
+        <div>
+          <div class="feature-title">Fundamentos e anatomia das unhas</div>
+          <div class="feature-text">Bases de higiene, anatomia, preparo e cuidados essenciais para trabalhar com segurança, qualidade e profissionalismo.</div>
+        </div>
+      </div>
+      <div class="feature-item reveal d1">
+        <div class="feature-marker"><div class="feature-marker-dot"></div></div>
+        <div>
+          <div class="feature-title">Técnicas completas de alongamento</div>
+          <div class="feature-text">Gel, acrigel, fibra de vidro e wrap — domine cada técnica com prática supervisionada e material didático incluso.</div>
+        </div>
+      </div>
+      <div class="feature-item reveal d2">
+        <div class="feature-marker"><div class="feature-marker-dot"></div></div>
+        <div>
+          <div class="feature-title">Nail art e design criativo</div>
+          <div class="feature-text">Do minimalismo ao detalhamento avançado. Aprenda pinturas, texturas e acabamentos que se destacam e encantam clientes.</div>
+        </div>
+      </div>
+      <div class="feature-item reveal d3">
+        <div class="feature-marker"><div class="feature-marker-dot"></div></div>
+        <div>
+          <div class="feature-title">Como precificar e montar seu negócio</div>
+          <div class="feature-text">Estratégias para cobrar com confiança, atrair clientes e construir uma carreira sólida como profissional autônoma.</div>
+        </div>
+      </div>
+    </div>
+    <div class="course-reach reveal d2">
+      <div class="reach-label">Alunas formadas e atuando em</div>
+      <div class="reach-cities">Americana SP · Cosmópolis · Engenheiro Coelho · Martinho Prado · Vila · Conchal</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio">
+  <div class="portfolio-header reveal">
+    <div>
+      <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Portfólio</span></div>
+      <h2 class="sec-title">Trabalhos<br><em>realizados</em></h2>
+    </div>
+    <a href="https://www.instagram.com/studio_anyarabartarin" class="portfolio-link" target="_blank">Ver no Instagram</a>
+  </div>
+  <div class="portfolio-grid reveal">
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Nail Art<br>Artística</div></div>
+      <div class="p-label">Nail Art Artística</div>
+    </div>
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Gel<br>Stiletto</div></div>
+      <div class="p-label">Alongamento Gel</div>
+    </div>
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Design<br>Premium</div></div>
+      <div class="p-label">Design Premium</div>
+    </div>
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Arte<br>Detalhada</div></div>
+      <div class="p-label">Nail Art Detalhada</div>
+    </div>
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Minhas<br>Alunas</div></div>
+      <div class="p-label">Formadas & Atuando</div>
+    </div>
+    <div class="p-item">
+      <div class="p-inner"><div class="p-placeholder">Estilo<br>Minimalista</div></div>
+      <div class="p-label">Estilo Minimalista</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="depoimentos">
+  <div class="reveal">
+    <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Depoimentos</span></div>
+    <h2 class="sec-title">O que dizem<br><em>clientes e alunas</em></h2>
+  </div>
+  <div class="t-grid">
+    <div class="t-card reveal">
+      <div class="t-location">Americana, SP</div>
+      <div class="t-quote">"Fiz o curso do zero e hoje já tenho minha própria clientela. A didática é incrível — aprendi de verdade e com segurança."</div>
+      <div class="t-author">Camila R.</div>
+      <div class="t-type">Aluna — Formação Profissional</div>
+    </div>
+    <div class="t-card reveal d1">
+      <div class="t-location">Conchal, SP</div>
+      <div class="t-quote">"Atendimento atencioso, material de qualidade e resultado que durou muito mais do que esperava. Minha melhor experiência em nail."</div>
+      <div class="t-author">Fernanda M.</div>
+      <div class="t-type">Cliente — Serviço de Unhas</div>
+    </div>
+    <div class="t-card reveal d2">
+      <div class="t-location">Cosmópolis, SP</div>
+      <div class="t-quote">"Após o curso minha confiança mudou completamente. Ela ensina com paciência real e o conteúdo é completo e muito prático."</div>
+      <div class="t-author">Bianca T.</div>
+      <div class="t-type">Aluna — Formação Profissional</div>
+    </div>
+    <div class="t-card reveal">
+      <div class="t-location">Engenheiro Coelho, SP</div>
+      <div class="t-quote">"Cada detalhe do meu atendimento foi pensado exclusivamente para mim. Saí apaixonada pelo resultado. Voltarei sempre."</div>
+      <div class="t-author">Juliana S.</div>
+      <div class="t-type">Cliente — Nail Art</div>
+    </div>
+    <div class="t-card reveal d1">
+      <div class="t-location">Martinho Prado, SP</div>
+      <div class="t-quote">"Fiz a formação e mudei de vida. Hoje tenho renda própria trabalhando com o que amo. Sou eternamente grata."</div>
+      <div class="t-author">Larissa P.</div>
+      <div class="t-type">Aluna — Formação Profissional</div>
+    </div>
+    <div class="t-card reveal d2">
+      <div class="t-location">Conchal, SP</div>
+      <div class="t-quote">"Profissional diferenciada. O ambiente, a atenção e a qualidade do trabalho são de um nível que não encontro em lugar nenhum."</div>
+      <div class="t-author">Ana Clara F.</div>
+      <div class="t-type">Cliente — Alongamento Gel</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds-section">
+  <div class="creds-boxes reveal">
+    <div class="cred-box dark">
+      <div class="cred-num">40<sup style="font-size:1.2rem;color:var(--rose)">+</sup></div>
+      <div class="cred-label">Certificados<br>Profissionais</div>
+    </div>
+    <div class="cred-box rose-bg">
+      <div class="cred-num">4<sup style="font-size:1.1rem;color:rgba(255,255,255,.55)">anos</sup></div>
+      <div class="cred-label">De experiência<br>no mercado</div>
+    </div>
+    <div class="cred-box warm-bg">
+      <div class="cred-num" style="color:var(--ink)">6</div>
+      <div class="cred-label">Cidades com<br>alunas formadas</div>
+    </div>
+    <div class="cred-box white-bg">
+      <div class="cred-num">5k<sup style="font-size:1rem;color:var(--rose)">+</sup></div>
+      <div class="cred-label">Seguidores no<br>Instagram</div>
+    </div>
+  </div>
+  <div class="reveal d2">
+    <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Credenciais</span></div>
+    <h2 class="sec-title">Preparação e<br><em>reconhecimento</em></h2>
+    <div class="award-badge">
+      <div class="award-icon">
+        <svg class="award-svg" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      </div>
+      <div>
+        <div class="award-label">Prêmio Real Premium</div>
+        <div class="award-text">Excelência Empresarial — Nail Designer Referência SP</div>
+      </div>
+    </div>
+    <div class="creds-list">
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Especialista em Unhas & Formação Profissional</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Mais de 40 certificados nacionais em nail design</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Formadora com metodologia própria e comprovada</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Atualização contínua com os melhores profissionais do Brasil</div></div>
+      <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Parcerias com marcas profissionais do setor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section" id="localizacao">
+  <div class="reveal">
+    <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Localização & Alcance</span></div>
+    <h2 class="sec-title">Atendimento<br>em todo o <em>interior</em></h2>
+    <p class="location-body">Estúdio em Conchal, SP. Atende e forma profissionais em múltiplas cidades. Cursos presenciais e serviços com agendamento prévio pelo WhatsApp.</p>
+    <div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Conchal</span><span class="city-note">Estúdio principal</span></div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Americana SP</span><span class="city-note">Alunas ativas</span></div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Cosmópolis</span><span class="city-note">Alunas ativas</span></div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Engenheiro Coelho</span><span class="city-note">Alunas ativas</span></div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Martinho Prado</span><span class="city-note">Alunas ativas</span></div>
+      <div class="city-item"><div class="city-dot"></div><span class="city-main">Vila</span><span class="city-note">Alunas ativas</span></div>
+    </div>
+  </div>
+  <div class="reveal d2">
+    <a class="location-map" href="https://www.google.com/maps/search/Conchal,+SP,+Brasil" target="_blank" rel="noopener noreferrer">
+      <div class="map-pin">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(184,120,94,.6)" stroke-width="1.5">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <div class="map-label">Localidade do estúdio</div>
+      <div class="map-city">Conchal, São Paulo</div>
+      <div class="map-address">Conchal — SP, Brasil<br>Interior de São Paulo</div>
+      <div class="map-cta">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+          <polyline points="15,3 21,3 21,9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+        Ver no Google Maps
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="contato">
+  <div class="reveal">
+    <div class="cta-label">Pronta para começar?</div>
+    <h2 class="cta-title">Seu próximo passo<br><em>começa agora</em></h2>
+  </div>
+  <div class="reveal d2">
+    <p class="cta-desc">Seja para agendar seu atendimento ou iniciar sua formação profissional, entre em contato direto. Todas as dúvidas respondidas antes de qualquer decisão.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/5519993823807?text=Ol%C3%A1%20Anyara!%20Quero%20agendar%20um%20hor%C3%A1rio" class="btn-cta-white">Agendar Serviço</a>
+      <a href="https://wa.me/5519993823807?text=Ol%C3%A1%20Anyara!%20Quero%20saber%20mais%20sobre%20o%20curso" class="btn-cta-ghost">Informações do Curso</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#inicio" class="footer-logo">Anyara <span>Bartarin</span></a>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/studio_anyarabartarin" target="_blank">Instagram</a>
+    <a href="https://wa.me/5519993823807" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2025 Anyara Bartarin. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+// ─── Custom Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+(function animRing() {
+  rx += (mx - rx) * 0.13;
+  ry += (my - ry) * 0.13;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '14px'; cursor.style.height = '14px';
+    ring.style.width = '54px'; ring.style.height = '54px';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '8px'; cursor.style.height = '8px';
+    ring.style.width = '36px'; ring.style.height = '36px';
+  });
+});
+
+// ─── Scroll Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ─── Mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  Object.assign(navLinks.style, menuOpen ? {
+    display: 'flex', flexDirection: 'column', gap: '18px',
+    position: 'absolute', top: '72px', left: '0', right: '0',
+    background: 'rgba(247,242,237,0.98)', padding: '24px 32px',
+    borderBottom: '1px solid var(--border)', backdropFilter: 'blur(20px)',
+    zIndex: '400'
+  } : { display: 'none' });
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => { menuOpen = false; navLinks.style.display = 'none'; });
+});
+
+// ─── Nav scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderBottomColor =
+    window.scrollY > 50 ? 'rgba(184,120,94,0.3)' : 'rgba(184,120,94,0.18)';
+});
+</script>
+</body>
+</html>
