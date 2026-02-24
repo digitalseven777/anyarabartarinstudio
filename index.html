@@ -78,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;d
 .hero-badge-label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:4px}
 .hero-badge-value{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink)}
 .hero-badge-value span{color:var(--rose);font-style:italic}
-.hero-badge2{position:absolute;top:96px;right:36px;background:var(--ink);padding:16px 20px;animation:fadeUp .9s 1s both;z-index:3}
+.hero-badge2{position:absolute;bottom:44px;right:36px;background:rgba(12,11,10,.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);padding:16px 20px;animation:fadeUp .9s 1s both;z-index:3}
 .hero-badge2-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px}
 .hero-badge2-value{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white}
 
@@ -118,8 +118,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;d
 .service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .service-card:hover{background:rgba(255,255,255,.02)}
 .service-card:hover::after{transform:scaleX(1)}
-.service-n{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:rgba(255,255,255,.04);line-height:1;margin-bottom:22px;transition:color .3s}
-.service-card:hover .service-n{color:rgba(184,120,94,.1)}
+.service-n{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1;margin-bottom:22px;transition:color .3s}
+.service-card:hover .service-n{color:var(--rose)}
 .service-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:white;margin-bottom:12px}
 .service-desc{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.78;font-weight:300;margin-bottom:22px}
 .service-tag{display:inline-block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,120,94,.22);padding:5px 11px;transition:all .3s}
