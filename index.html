@@ -10,17 +10,17 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0c0b0a;
-  --ink2:#181614;
-  --cream:#f7f2ed;
-  --warm:#ede6de;
-  --rose:#b8785e;
-  --rose-light:#c8907a;
-  --gold:#c9a96e;
-  --muted:#8a7f76;
-  --muted2:#b5aa9f;
-  --border:rgba(184,120,94,0.18);
-  --border2:rgba(184,120,94,0.08);
+  --ink:#09070b;
+  --ink2:#140d15;
+  --cream:#f7edf3;
+  --warm:#ecdce6;
+  --rose:#e14a8f;
+  --rose-light:#f07ab0;
+  --gold:#f3a4cb;
+  --muted:#6f5e69;
+  --muted2:#aa92a0;
+  --border:rgba(225,74,143,0.22);
+  --border2:rgba(225,74,143,0.1);
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
@@ -29,7 +29,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);o
 .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid var(--rose);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s;opacity:.55}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,242,237,0.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);animation:navIn .8s ease both}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,237,243,0.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);animation:navIn .8s ease both}
 @keyframes navIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
 .nav-logo{font-family:'Italiana',serif;font-size:1.2rem;color:var(--ink);text-decoration:none}
 .nav-logo span{color:var(--rose)}
@@ -115,15 +115,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 60px;height:72px;d
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.05)}
 .service-card{padding:42px 34px;border-right:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;transition:background .4s;text-decoration:none;display:block}
 .service-card:nth-child(3n){border-right:none}
-.service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--rose-light));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .service-card:hover{background:rgba(255,255,255,.02)}
 .service-card:hover::after{transform:scaleX(1)}
 .service-n{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1;margin-bottom:22px;transition:color .3s}
 .service-card:hover .service-n{color:var(--rose)}
 .service-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:white;margin-bottom:12px}
 .service-desc{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.78;font-weight:300;margin-bottom:22px}
-.service-tag{display:inline-block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,120,94,.22);padding:5px 11px;transition:all .3s}
-.service-card:hover .service-tag{background:rgba(184,120,94,.1);border-color:var(--rose)}
+.service-tag{display:inline-block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(225,74,143,.28);padding:5px 11px;transition:all .3s}
+.service-card:hover .service-tag{background:rgba(225,74,143,.12);border-color:var(--rose)}
 
 /* COURSE */
 .course-section{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
@@ -442,51 +442,50 @@ footer{background:var(--ink);padding:46px 80px;display:flex;justify-content:spac
 <section class="services-section" id="servicos">
   <div class="services-header reveal">
     <div>
-      <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Serviços</span></div>
-      <h2 class="sec-title">O que posso<br>fazer por você</h2>
+      <div class="sec-label"><div class="sec-label-line"></div><span class="sec-label-text">Curso Presencial</span></div>
+      <h2 class="sec-title">Proxima turma com<br><em>super promocao</em></h2>
     </div>
-    <div class="services-header-right">Cada serviço é executado com materiais premium, técnica refinada e atenção absoluta a cada detalhe. Agende e veja a diferença.</div>
+    <div class="services-header-right">Bloco pensado para conversao: foco total na formacao presencial, vagas limitadas e condicao especial para as primeiras inscricoes.</div>
   </div>
   <div class="services-grid">
-    <a href="https://wa.me/5519993823807" class="service-card reveal">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Quero%20detalhes%20da%20turma%20presencial%20promocional." class="service-card reveal">
       <div class="service-n">01</div>
-      <div class="service-name">Alongamento em Gel</div>
-      <div class="service-desc">Técnica completa com gel premium, construção durável e acabamento impecável. Ideal para comprimento e resistência no dia a dia.</div>
-      <span class="service-tag">Agendar</span>
+      <div class="service-name">Imersao Presencial Intensiva</div>
+      <div class="service-desc">Aulas 100% presenciais com pratica real do zero ao avancado, acompanhamento proximo e metodo validado para entrar no mercado com seguranca.</div>
+      <span class="service-tag">Quero detalhes</span>
     </a>
-    <a href="https://wa.me/5519993823807" class="service-card reveal d1">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Quero%20garantir%20a%20promocao%20da%20turma%20presencial." class="service-card reveal d1">
       <div class="service-n">02</div>
-      <div class="service-name">Acrigel & Fibra de Vidro</div>
-      <div class="service-desc">Combinação de técnicas para unhas com máxima resistência e naturaldade. Perfeito para o cotidiano intenso e quem exige durabilidade.</div>
-      <span class="service-tag">Agendar</span>
+      <div class="service-name">Super Promocao de Lancamento</div>
+      <div class="service-desc">Condicao especial para as primeiras vagas confirmadas: investimento reduzido, bonus exclusivos e prioridade no suporte de inicio.</div>
+      <span class="service-tag">Garantir promocao</span>
     </a>
-    <a href="https://wa.me/5519993823807" class="service-card reveal d2">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Esse%20curso%20presencial%20e%20ideal%20para%20mim%3F" class="service-card reveal d2">
       <div class="service-n">03</div>
-      <div class="service-name">Nail Art & Design</div>
-      <div class="service-desc">Arte personalizada do minimalismo refinado até trabalhos detalhados e exclusivos. Cada detalhe reflete sua personalidade única.</div>
-      <span class="service-tag">Agendar</span>
+      <div class="service-name">Para Quem Quer Viver da Area</div>
+      <div class="service-desc">Ideal para iniciantes e profissionais que querem aumentar faturamento com tecnica de alto padrao, posicionamento e atendimento premium.</div>
+      <span class="service-tag">Ver perfil ideal</span>
     </a>
-    <a href="https://wa.me/5519993823807" class="service-card reveal">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Quais%20tecnicas%20vou%20aprender%20na%20formacao%20presencial%3F" class="service-card reveal">
       <div class="service-n">04</div>
-      <div class="service-name">Manicure Clássica</div>
-      <div class="service-desc">Cuidado completo das cutículas, modelagem e esmaltação com produtos selecionados para resultado elegante e duradouro.</div>
-      <span class="service-tag">Agendar</span>
+      <div class="service-name">Conteudo para Resultado Rapido</div>
+      <div class="service-desc">Gel, acrigel, fibra, acabamento comercial, biosseguranca e estrategia de atendimento para transformar tecnica em agenda lotada.</div>
+      <span class="service-tag">Receber plano</span>
     </a>
-    <a href="https://wa.me/5519993823807" class="service-card reveal d1">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Quero%20saber%20sobre%20certificado%20e%20suporte%20apos%20aulas." class="service-card reveal d1">
       <div class="service-n">05</div>
-      <div class="service-name">Manutenção & Rebalanceamento</div>
-      <div class="service-desc">Reequilíbrio e manutenção do alongamento para preservar a integridade e beleza das suas unhas por muito mais tempo.</div>
-      <span class="service-tag">Agendar</span>
+      <div class="service-name">Certificacao + Suporte Pos-Curso</div>
+      <div class="service-desc">Voce conclui com certificado e direcionamento pratico para comecar a atender com confianca, precificacao correta e postura profissional.</div>
+      <span class="service-tag">Quero suporte</span>
     </a>
-    <a href="#curso" class="service-card reveal d2">
+    <a href="https://wa.me/5519993823807?text=Ola%20Anyara!%20Quero%20reservar%20minha%20vaga%20na%20turma%20presencial%20com%20promocao." class="service-card reveal d2">
       <div class="service-n">06</div>
-      <div class="service-name">Formação Profissional</div>
-      <div class="service-desc">Aprenda com quem domina a arte. Cursos modulares do zero ao avançado, com certificação reconhecida e suporte contínuo.</div>
-      <span class="service-tag">Saber mais</span>
+      <div class="service-name">Reserva Imediata de Vaga</div>
+      <div class="service-desc">Turma presencial com vagas limitadas. Chame no WhatsApp agora para travar o valor promocional antes do encerramento da campanha.</div>
+      <span class="service-tag">Reservar agora</span>
     </a>
   </div>
 </section>
-
 <!-- COURSE -->
 <section class="course-section" id="curso">
   <div class="course-left">
@@ -786,3 +785,4 @@ window.addEventListener('scroll', () => {
 </script>
 </body>
 </html>
+
